@@ -16,7 +16,9 @@ defmodule Ueberauth.Strategy.Google do
     scopes = conn.params["scope"] || option(conn, :default_scope)
 
     opts =
-      [scope: scopes]
+      conn
+      |> Ueberauth.Config.get(Ueberauth.Strategy.Google.OAuth)
+      |> Keyword.merge([scope: scopes])
       |> with_optional(:hd, conn)
       |> with_optional(:approval_prompt, conn)
       |> with_optional(:access_type, conn)
@@ -33,7 +35,8 @@ defmodule Ueberauth.Strategy.Google do
   """
   def handle_callback!(%Plug.Conn{params: %{"code" => code}} = conn) do
     params = [code: code]
-    opts = [redirect_uri: callback_url(conn)]
+    config = Ueberauth.Config.get(conn, Ueberauth.Strategy.Google.OAuth)
+    opts = Keyword.merge(config, [redirect_uri: callback_url(conn)])
     case Ueberauth.Strategy.Google.OAuth.get_access_token(params, opts) do
       {:ok, token} ->
         fetch_user(conn, token)
@@ -128,7 +131,8 @@ defmodule Ueberauth.Strategy.Google do
 
     # userinfo_endpoint from https://accounts.google.com/.well-known/openid-configuration
     path = "https://www.googleapis.com/oauth2/v3/userinfo"
-    resp = Ueberauth.Strategy.Google.OAuth.get(token, path)
+    config = Ueberauth.Config.get(conn, Ueberauth.Strategy.Google.OAuth)
+    resp = Ueberauth.Strategy.Google.OAuth.get(token, path, [], config)
 
     case resp do
       {:error, %OAuth2.Response{status_code: 401, body: _body}} ->
