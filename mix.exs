@@ -6,6 +6,7 @@ defmodule UeberauthGoogle.Mixfile do
 
   def project do
     [app: :ueberauth_google,
+     orgzanization: "finotech",
      version: @version,
      name: "Ueberauth Google Strategy",
      package: package(),
@@ -26,7 +27,7 @@ defmodule UeberauthGoogle.Mixfile do
   defp deps do
     [
      {:oauth2, "~> 0.9"},
-     {:ueberauth, github: "geeksoftteam/ueberauth"},
+     {:ueberauth, "~> 0.5.0", organization: "finotech"},
 
      {:credo, "~> 0.8", only: [:dev, :test]},
      {:earmark, ">= 0.0.0", only: :dev},

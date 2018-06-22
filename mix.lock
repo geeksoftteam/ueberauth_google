@@ -1,4 +1,5 @@
-%{"bunt": {:hex, :bunt, "0.2.0", "951c6e801e8b1d2cbe58ebbd3e616a869061ddadcc4863d0a2182541acae9a38", [:mix], [], "hexpm"},
+%{
+  "bunt": {:hex, :bunt, "0.2.0", "951c6e801e8b1d2cbe58ebbd3e616a869061ddadcc4863d0a2182541acae9a38", [:mix], [], "hexpm"},
   "certifi": {:hex, :certifi, "1.2.1", "c3904f192bd5284e5b13f20db3ceac9626e14eeacfbb492e19583cf0e37b22be", [:rebar3], [], "hexpm"},
   "credo": {:hex, :credo, "0.8.4", "4e50acac058cf6292d6066e5b0d03da5e1483702e1ccde39abba385c9f03ead4", [:mix], [{:bunt, "~> 0.2.0", [hex: :bunt, repo: "hexpm", optional: false]}], "hexpm"},
   "earmark": {:hex, :earmark, "1.0.1", "2c2cd903bfdc3de3f189bd9a8d4569a075b88a8981ded9a0d95672f6e2b63141", [], [], "hexpm"},
@@ -7,12 +8,13 @@
   "httpoison": {:hex, :httpoison, "0.9.1", "6c2b4eaf2588a6f3ef29663d28c992531ca3f0bc832a97e0359bc822978e1c5d", [:mix], [{:hackney, "~> 1.6.0", [hex: :hackney, optional: false]}]},
   "idna": {:hex, :idna, "5.0.2", "ac203208ada855d95dc591a764b6e87259cb0e2a364218f215ad662daa8cd6b4", [:rebar3], [{:unicode_util_compat, "0.2.0", [hex: :unicode_util_compat, repo: "hexpm", optional: false]}], "hexpm"},
   "metrics": {:hex, :metrics, "1.0.1", "25f094dea2cda98213cecc3aeff09e940299d950904393b2a29d191c346a8486", [], [], "hexpm"},
-  "mime": {:hex, :mime, "1.1.0", "01c1d6f4083d8aa5c7b8c246ade95139620ef8effb009edde934e0ec3b28090a", [], [], "hexpm"},
+  "mime": {:hex, :mime, "1.3.0", "5e8d45a39e95c650900d03f897fbf99ae04f60ab1daa4a34c7a20a5151b7a5fe", [:mix], [], "hexpm"},
   "mimerl": {:hex, :mimerl, "1.0.2", "993f9b0e084083405ed8252b99460c4f0563e41729ab42d9074fd5e52439be88", [], [], "hexpm"},
   "mimetype_parser": {:hex, :mimetype_parser, "0.1.2", "221d2d3f727e89d80de5e1610fc2ce444514aa56f873da1b8fc9c033143e5d6a", [:mix], []},
   "oauth2": {:hex, :oauth2, "0.9.1", "cac86d87f35ec835bfe4c791263bdb88c0d8bf1617d64f555ede4e9d913e35ef", [:mix], [{:hackney, "~> 1.7", [hex: :hackney, repo: "hexpm", optional: false]}], "hexpm"},
-  "plug": {:hex, :plug, "1.4.3", "236d77ce7bf3e3a2668dc0d32a9b6f1f9b1f05361019946aae49874904be4aed", [], [{:cowboy, "~> 1.0.1 or ~> 1.1", [hex: :cowboy, repo: "hexpm", optional: true]}, {:mime, "~> 1.0", [hex: :mime, repo: "hexpm", optional: false]}], "hexpm"},
+  "plug": {:hex, :plug, "1.5.1", "1ff35bdecfb616f1a2b1c935ab5e4c47303f866cb929d2a76f0541e553a58165", [:mix], [{:cowboy, "~> 1.0.1 or ~> 1.1 or ~> 2.3", [hex: :cowboy, repo: "hexpm", optional: true]}, {:mime, "~> 1.0", [hex: :mime, repo: "hexpm", optional: false]}], "hexpm"},
   "poison": {:hex, :poison, "2.2.0", "4763b69a8a77bd77d26f477d196428b741261a761257ff1cf92753a0d4d24a63", [:mix], []},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.1", "28a4d65b7f59893bc2c7de786dec1e1555bd742d336043fe644ae956c3497fbe", [:make, :rebar], [], "hexpm"},
-  "ueberauth": {:git, "https://github.com/geeksoftteam/ueberauth.git", "3ced7866b11c89fab5c229127961bde3a1b8318e", []},
-  "unicode_util_compat": {:hex, :unicode_util_compat, "0.2.0", "dbbccf6781821b1c0701845eaf966c9b6d83d7c3bfc65ca2b78b88b8678bfa35", [:rebar3], [], "hexpm"}}
+  "ueberauth": {:hex, :ueberauth, "0.5.0", "ad6fcca2846d5cfa2c51218bc3497e00afcf5d922844909666777039c1d0a621", [:mix], [{:plug, "~> 1.5.0", [hex: :plug, repo: "hexpm", optional: false]}], "hexpm:finotech"},
+  "unicode_util_compat": {:hex, :unicode_util_compat, "0.2.0", "dbbccf6781821b1c0701845eaf966c9b6d83d7c3bfc65ca2b78b88b8678bfa35", [:rebar3], [], "hexpm"},
+}
